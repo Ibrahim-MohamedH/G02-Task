@@ -1,0 +1,251 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 4000px;
+}
+
+/* 
+break-points
+*/
+/* ====== Nav Start ====== */
+.hero {
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100dvh;
+    /* viewport height */
+}
+
+.hero .layout {
+    background-color: rgba(0, 0, 0, 0.5);
+    min-height: 100dvh;
+    padding-bottom: 20px;
+}
+
+.hero .layout .nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero .layout .nav .menu-icon {
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    display: none;
+}
+
+.hero .layout .nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.hero .layout .nav .logo {
+    padding: 0px 10px;
+}
+
+.hero .layout .nav .logo img {
+    width: 80px;
+}
+
+.hero .layout .nav ul li {
+    margin: 20px;
+}
+
+.hero .layout .nav ul li a {
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    transition: all 0.3s;
+    border-radius: 4px;
+}
+
+.hero .layout .nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+}
+
+/* ====== Caption Start ====== */
+.hero .layout .caption {
+    text-align: center;
+}
+
+.hero .layout .caption h1 {
+    margin: 30px 0px;
+    font-size: 2.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.hero .layout .caption button {
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 10px 0px;
+    width: 15%;
+    cursor: pointer;
+    background-color: crimson;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.hero .layout .caption button:hover {
+    transform: scale(1.1) translateY(-5px);
+    background-color: darkblue;
+}
+
+/* ====== About US =========== */
+.about-us {
+    padding: 20px;
+    background-image: url("../images/nature2.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    /* viewport height */
+}
+
+.about-us h2 {
+    text-align: center;
+    width: 30%;
+    margin: 0px auto 20px;
+    position: relative;
+}
+
+.about-us h2::after {
+    content: "About us";
+    position: absolute;
+    left: 50%;
+    color: rgba(0, 0, 0, 0.3);
+    top: -12px;
+    font-size: 32px;
+    transform: translateX(-50%);
+}
+
+.about-us h2::before {
+    content: '';
+    width: 50%;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+
+}
+
+.about-us p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-us .row {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+
+.about-us .row .card {
+    width: 25%;
+    padding-inline: 15px;
+
+}
+
+.about-us .row .card .user-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.about-us .row .card .user-image img {
+    width: 100%;
+    height: 400px;
+}
+
+.about-us .row .card .user-image .layout {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    inset-inline-start: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    transition: all 0.3s;
+}
+
+.about-us .row .card .user-image:hover .layout {
+    inset: 0;
+    /* top bottom right left */
+}
+
+.about-us .row .card .user-image .layout h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-us .row .card .user-image .layout .icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    & a {
+        color: black;
+        text-decoration: none;
+        font-size: 20px;
+        transition: all 0.5s;
+
+        &:hover {
+            color: darkorchid;
+            transform: translateY(-5px);
+        }
+    }
+}
+
+
+
+@media (max-width: 1024px) {
+    .hero .layout .caption button {
+        width: 30%;
+    }
+
+    .about-us .row .card {
+        width: 50%;
+    }
+.about-us h2 {
+    width: 50%;
+}
+
+
+}
+
+@media (max-width: 768px) {
+    .hero .layout .nav ul {
+        display: none;
+    }
+
+    .hero .layout .nav .menu-icon {
+        display: block;
+    }
+}
+
+@media (max-width:576px) {
+    .hero .layout .caption img {
+        width: 100%;
+    }
+
+    .hero .layout .caption button {
+        width: 100%;
+        margin-block-end: 10px;
+    }
+
+    .about-us .row .card {
+        width: 100%;
+    }
+    .about-us h2 {
+    width: 80%;
+}
+}
